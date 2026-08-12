@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>实体书店新零售解决方案 · 春航智慧云 — 重庆春航科技有限公司</title>
+<link rel="icon" href="assets/icon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="assets/icon.ico" type="image/x-icon">
 <style>
   :root{
     --blue:#2154f0;
@@ -46,12 +48,12 @@
     box-shadow:0 4px 10px rgba(33,84,240,.35);
   }
   .brand small{display:block;font-size:10px;color:var(--muted);font-weight:500;letter-spacing:1.5px;line-height:1;}
-  nav ul{display:flex;gap:26px;list-style:none;font-size:14.5px;font-weight:600;color:#333c4d;}
+  nav ul{display:flex;gap:22px;list-style:none;font-size:14.5px;font-weight:600;color:#333c4d;}
   nav a{padding:6px 2px;position:relative;transition:color .2s;}
   nav a:hover{color:var(--blue);}
   nav a::after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--blue);transition:right .25s;}
   nav a:hover::after{right:0;}
-  @media(max-width:900px){nav ul{display:none;}}
+  @media(max-width:960px){nav ul{display:none;}}
 
   /* ---------- Hero ---------- */
   .hero{
@@ -125,6 +127,22 @@
     .tl-item::before{top:2px;}
   }
 
+  /* 公司资质 */
+  .cert-grid{margin-top:34px;display:grid;grid-template-columns:repeat(5,1fr);gap:14px;}
+  .cert-grid figure{
+    margin:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px;
+    box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;
+  }
+  .cert-grid figure:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 36px rgba(23,42,110,.16);}
+  .cert-grid img{width:100%;height:200px;object-fit:cover;border-radius:8px;}
+  @media(max-width:900px){.cert-grid{grid-template-columns:repeat(3,1fr);}}
+  @media(max-width:600px){.cert-grid{grid-template-columns:repeat(2,1fr);}.cert-grid img{height:150px;}}
+
+  /* ---------- 产品架构 ---------- */
+  #arch{background:#fff;}
+  .arch-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);}
+  .arch-img img{width:100%;}
+
   /* ---------- 产品 ---------- */
   #products{background:#fff;}
   .prod{
@@ -153,10 +171,47 @@
   .feat h5{font-size:16px;font-weight:800;}
   .feat p{font-size:13.5px;color:var(--muted);text-align:justify;}
   .prod-media .duo{display:grid;gap:14px;}
+  .prod-media .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start;}
+  .prod-media .trio img{width:100%;}
   @media(max-width:900px){
     .prod{grid-template-columns:1fr;}
     .prod.rev .prod-media{order:0;}
   }
+
+  /* AI 能力卡片（慧眼系统） */
+  .ai-cards{display:grid;gap:14px;}
+  .ai-card{
+    background:linear-gradient(135deg,#eef3ff,#ffffff);border:1px solid #d4e0ff;border-radius:14px;
+    padding:18px 20px;display:flex;gap:14px;align-items:flex-start;box-shadow:var(--shadow);
+  }
+  .ai-card .ico-ai{
+    flex:none;width:42px;height:42px;border-radius:12px;color:#fff;font-weight:900;font-size:12px;
+    background:linear-gradient(135deg,var(--blue),#4d82ff);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 4px 10px rgba(33,84,240,.3);letter-spacing:1px;
+  }
+  .ai-card b{font-size:15.5px;display:block;margin-bottom:2px;}
+  .ai-card p{font-size:13px;color:var(--muted);text-align:justify;}
+  .ai-cards video{width:100%;aspect-ratio:16/9;object-fit:contain;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow);background:#000;}
+  .ai-cards figcaption{font-size:12.5px;color:var(--muted);text-align:center;margin-top:2px;}
+  .ai-cards figure{margin:0;display:grid;gap:6px;}
+
+  /* 硬件设备 */
+  .hw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px;}
+  .hw{
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;
+    display:flex;flex-direction:column;gap:10px;box-shadow:var(--shadow);
+    transition:transform .2s,box-shadow .2s;
+  }
+  .hw:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(23,42,110,.14);}
+  .hw .pic{
+    height:130px;background:linear-gradient(180deg,#f2f6ff,#e8eeff);border-radius:10px;
+    display:flex;align-items:center;justify-content:center;padding:14px;
+  }
+  .hw .pic img{max-height:100%;width:auto;max-width:100%;}
+  .hw b{font-size:15.5px;font-weight:800;}
+  .hw span{font-size:12.5px;color:var(--muted);text-align:justify;line-height:1.7;}
+  @media(max-width:900px){.hw-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:560px){.hw-grid{grid-template-columns:1fr;}}
 
   /* ---------- 功能对比 ---------- */
   .cmp{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:#fff;}
@@ -220,20 +275,42 @@
   @media(max-width:900px){.promise{grid-template-columns:1fr 1fr;}}
   @media(max-width:560px){.promise{grid-template-columns:1fr;}}
 
-  /* ---------- 合作伙伴 ---------- */
-  .pt-group{margin-bottom:34px;}
+  /* ---------- 供应链合作商家 ---------- */
+  .pt-group{margin-top:36px;}
   .pt-group h5{font-size:15px;font-weight:800;color:var(--blue-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
   .pt-group h5::before{content:"";width:4px;height:16px;border-radius:2px;background:var(--blue);}
-  .pt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  .pt-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
   .pt{
-    background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;
-    display:flex;flex-direction:column;gap:4px;transition:transform .2s,box-shadow .2s;
+    position:relative;overflow:hidden;
+    background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;
+    display:flex;flex-direction:column;gap:8px;
+    box-shadow:0 4px 14px rgba(23,42,110,.05);
+    transition:transform .25s,box-shadow .25s,border-color .25s;
   }
-  .pt:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
-  .pt b{font-size:15.5px;font-weight:800;}
-  .pt span{font-size:12.5px;color:var(--muted);}
+  .pt::before{
+    content:"";position:absolute;left:0;top:0;bottom:0;width:4px;border-radius:4px 0 0 4px;
+    background:linear-gradient(180deg,var(--blue),#4d82ff);
+    transform:scaleY(0);transform-origin:top;transition:transform .3s;
+  }
+  .pt:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(23,42,110,.14);border-color:#c9d8ff;}
+  .pt:hover::before{transform:scaleY(1);}
+  .pt b{font-size:15.5px;font-weight:800;color:var(--ink);display:flex;align-items:flex-start;gap:9px;line-height:1.5;}
+  .pt b::before{
+    content:"";flex:none;width:8px;height:8px;border-radius:50%;margin-top:7px;
+    background:linear-gradient(135deg,var(--blue),#4d82ff);box-shadow:0 0 0 3px var(--blue-soft);
+  }
+  .pt span{
+    align-self:flex-start;margin-left:17px;
+    font-size:12px;color:var(--blue-deep);background:var(--blue-soft);
+    padding:3px 11px;border-radius:999px;border:1px solid #d4e0ff;
+  }
   @media(max-width:900px){.pt-cards{grid-template-columns:1fr 1fr;}}
   @media(max-width:560px){.pt-cards{grid-template-columns:1fr;}}
+  /* 紧凑型合作商家卡片（产品矩阵·供应链） */
+  .pt-cards.mini{gap:10px;}
+  .pt-cards.mini .pt{padding:10px 14px;border-radius:10px;gap:0;box-shadow:0 2px 8px rgba(23,42,110,.04);}
+  .pt-cards.mini .pt b{font-size:13.5px;gap:8px;line-height:1.45;}
+  .pt-cards.mini .pt b::before{width:6px;height:6px;margin-top:6px;box-shadow:0 0 0 2px var(--blue-soft);}
 
   /* ---------- 客户案例 ---------- */
   #cases{background:#fff;}
@@ -244,11 +321,15 @@
   }
   .case:hover{transform:translateY(-4px);}
   .case img{width:100%;height:250px;object-fit:cover;}
-  .case-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:10px;flex:1;}
-  .case-body h5{font-size:18px;font-weight:900;display:flex;align-items:center;gap:10px;}
+  .case-body{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .case-body h5{font-size:18px;font-weight:900;display:flex;align-items:center;gap:10px;margin-bottom:4px;}
   .case-body h5::before{content:"";width:10px;height:10px;background:var(--blue);border-radius:3px;flex:none;}
-  .case-body p{font-size:13.5px;color:var(--muted);text-align:justify;flex:1;}
-  .case-app{font-size:12.5px;color:var(--blue-deep);background:var(--blue-soft);border-radius:8px;padding:8px 12px;font-weight:700;}
+  .case-body p{font-size:13px;color:var(--muted);text-align:justify;}
+  .case-body p b{color:var(--blue-deep);margin-right:4px;}
+  .case-app{font-size:12.5px;color:var(--blue-deep);background:var(--blue-soft);border-radius:8px;padding:8px 12px;font-weight:700;margin-top:auto;}
+  .logo-wall{margin-top:56px;}
+  .logo-wall h5{font-size:17px;font-weight:900;text-align:center;margin-bottom:18px;}
+  .logo-wall .wall-img{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);}
   @media(max-width:900px){.case-grid{grid-template-columns:1fr;}}
 
   /* ---------- 页脚 ---------- */
@@ -273,10 +354,12 @@
     <nav>
       <ul>
         <li><a href="#about">公司介绍</a></li>
-        <li><a href="#products">产品矩阵</a></li>
+        <li><a href="#certs">公司资质</a></li>
+        <li><a href="#arch">产品架构</a></li>
         <li><a href="#compare">功能对比</a></li>
-        <li><a href="#data">数据与服务</a></li>
+        <li><a href="#products">产品矩阵</a></li>
         <li><a href="#partners">合作伙伴</a></li>
+        <li><a href="#data">数据与服务</a></li>
         <li><a href="#cases">客户案例</a></li>
       </ul>
     </nav>
@@ -291,7 +374,7 @@
     <h2>— 春航助力实体书店数字化转型</h2>
     <p class="en">重庆春航科技有限公司 · 书店数字化门店整体方案提供商</p>
     <div class="stats">
-      <div class="stat"><b>18年+</b><span>软件开发技术沉淀 · 图书行业实施经验</span></div>
+      <div class="stat"><b>18年+</b><span>软件开发技术沉淀 · 图书行业全场景实施经验</span></div>
       <div class="stat"><b>5000+</b><span>遍布全国的图书行业服务客户</span></div>
       <div class="stat"><b>6000+</b><span>每日同时在线的主系统用户</span></div>
       <div class="stat"><b>300w+</b><span>图书商城日均访问量</span></div>
@@ -303,22 +386,19 @@
 <section id="about">
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-no">01</span><h3>公司介绍</h3></div>
-    <p class="sec-sub reveal">重庆春航科技有限公司 —— 全国书店数字化转型的友好合作伙伴</p>
+    <p class="sec-sub reveal">重庆春航科技有限公司 —— 全国书业数字化转型的长期友好伙伴</p>
 
     <div class="about-grid">
       <div class="photo reveal"><img src="assets/booth.jpg" alt="春航科技展位" loading="lazy"></div>
       <div class="about-text reveal">
         <h4>重庆春航科技有限公司</h4>
-        <p>重庆春航科技有限公司位于美丽的山城重庆，公司拥有18年以上的软件开发技术沉淀＋图书行业实施经验。现目前，春航科技实施团队已服务超5000＋遍布全国的图书行业客户，其中包括了新华书店、民营书店、连锁书店、图书批发、期刊发行、学校、政府事业单位及省市区级图书馆等。</p>
-        <p>公司专注深耕图书行业SaaS系统的研究与开发，立志成为全国书店数字化转型的友好合作伙伴，春航团队从致力图书行业的数字化转型的理念出发，用智慧化的方式解决书店管理痛点，共同构建更加智慧的书业生态环境。</p>
+        <p>重庆春航科技扎根山城重庆，拥有18年以上的软件开发技术积淀与图书行业全场景实施经验。公司总部位于重庆，主要做产品的研发，在全国目前已拥有11家分子公司，为客户提供本地化的咨询和技术支持服务。现目前，公司已服务全国5000＋图书行业客户，包含新华书店、民营/连锁书店、图书批发、期刊发行、学校、政企单位及各级公共图书馆。</p>
+        <p>我们专注研发图书行业SaaS智慧管理系统，深耕行业痛点、用数字化技术赋能书店转型升级，立志成为全国书业数字化转型的长期友好伙伴，与行业同行共建智慧书业新生态。</p>
         <div class="chips">
-          <span class="chip">ISO27001 信息安全管理体系认证</span>
-          <span class="chip">国家双软认证</span>
-          <span class="chip">3A级信用证书</span>
-          <span class="chip">国家高新技术企业</span>
-          <span class="chip">多项软件著作权</span>
-          <span class="chip">专利证书</span>
-          <span class="chip">各类商标证书</span>
+          <span class="chip">18年+ 技术积淀</span>
+          <span class="chip">5000+ 服务客户</span>
+          <span class="chip">11家 分子公司</span>
+          <span class="chip">本地化咨询与技术支持</span>
         </div>
       </div>
     </div>
@@ -326,98 +406,60 @@
     <div class="timeline reveal">
       <div class="tl-item">
         <div class="phase">初心</div><div class="years">2008–2014年</div>
-        <p>春航科技于2008年创立并服务于图书行业，立志改变图书行业信息化落后的现状，将技术与服务相结合，全面提升图书行业的信息化水平。</p>
+        <p>春航科技成立于2008年，深耕图书行业数字化服务领域。公司以革新行业信息化滞后现状为初心，融合前沿技术与全流程配套服务，全方位助推图书行业数字化、信息化转型升级。</p>
       </div>
       <div class="tl-item">
         <div class="phase">诞生</div><div class="years">2014–2018年</div>
-        <p>2014年春航科技成功转型，组建了专业的研发设计团队，成为了图书行业定制化服务商，坚定并坚持用设计＋技术为客户提供美好的用户体验。</p>
+        <p>2014年春航科技完成战略转型升级，搭建专属专业研发设计团队，转型为图书行业专属定制化服务商。我们始终秉持设计与技术双驱动理念，为客户打造优质流畅的使用体验。</p>
       </div>
       <div class="tl-item">
         <div class="phase">成长</div><div class="years">2018–2022年</div>
-        <p>春航科技成功将基于BS架构的3.0系统升级为SaaS架构的4.0智慧系统，并已投入市场使用，这也是图书行业的第一款SaaS软件。春航团队一直坚持“专注创新，用心服务”的态度与理念服务每一位书业客户。</p>
+        <p>春航科技完成系统迭代升级，将原有BS架构3.0系统迭代为SaaS架构4.0智慧系统并全面推向市场，该产品亦是国内图书行业首款SaaS数字化软件。团队始终坚守“专注创新，用心服务”的核心理念。</p>
       </div>
       <div class="tl-item">
         <div class="phase">未来</div><div class="years">2022–未来</div>
-        <p>春航科技将不忘初心、砥砺前行，用技术和产品驱动书业革新，将科学、智慧的方法应用到书店的运营管理上，为书店提供更加智慧化的服务。</p>
+        <p>春航科技将坚守初心、砥砺深耕，以技术与优质产品驱动书业数字化革新，把智能化、科学化管理模式融入门店全流程运营，为各大书店提供全方位、高适配的智慧化服务。</p>
+      </div>
+    </div>
+
+    <!-- 公司资质 -->
+    <div id="certs" style="margin-top:80px;">
+      <div class="sec-head reveal"><span class="sec-no">02</span><h3>公司资质</h3></div>
+      <p class="sec-sub reveal" style="margin-bottom:24px;">荣誉资质 —— 荣获3A、高新技术企业，软件产品及著作登记证书</p>
+      <div class="about-text reveal">
+        <p>春航科技拥有国家级认证体系，已获得全国图书行业客户的一致好评，让您更放心地选择我们为您服务。</p>
+        <div class="chips">
+          <span class="chip">ISO27001 信息安全管理体系认证</span>
+          <span class="chip">国家双软认证</span>
+          <span class="chip">3A级信用证书</span>
+          <span class="chip">国家高新技术企业</span>
+          <span class="chip">多项软件著作权登记证书</span>
+          <span class="chip">专利证书</span>
+          <span class="chip">各类商标证书</span>
+        </div>
+      </div>
+      <div class="cert-grid reveal">
+        <figure><img src="assets/cert-1.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-2.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-3.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-4.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-5.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-6.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-7.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-8.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-9.jpg" alt="资质证书" loading="lazy"></figure>
+        <figure><img src="assets/cert-10.jpg" alt="资质证书" loading="lazy"></figure>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= 02 产品矩阵 ================= -->
-<section id="products">
+<!-- ================= 03 产品架构 ================= -->
+<section id="arch">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-no">02</span><h3>春航智慧云产品矩阵</h3></div>
-    <p class="sec-sub reveal">基于SaaS云架构的智慧书店管理系统，涵盖进销存、WMS仓储、库存、会员营销、餐饮、图书借阅、财务分析、报表统计、员工权限、线上商城等能力，满足书店管理、销售、分析等多方位要求。<span class="sec-tag">解决方案</span></p>
-
-    <!-- SaaS 主系统 -->
-    <div class="prod reveal">
-      <div class="prod-body">
-        <h4>春航智慧云 SaaS 主系统<span class="sec-tag">解决方案</span></h4>
-        <p class="lead">系统基于SaaS云架构，涵盖进销存、WMS仓储管理、库存管理、会员营销、餐饮管理、图书借阅管理、财务分析、报表统计、员工权限管理、线上商城管理等多个功能，打造书店供应链、采购、会员、营销、商城、财务的运营闭环，解决图书行业的经营难点。</p>
-        <div class="feat-list">
-          <div class="feat"><div class="no">1</div><div><h5>春航进销存管理系统</h5><p>全链路集成模式，仓配、直配、直送、越库等多种方式满足书店不同的配货配送需求。</p></div></div>
-          <div class="feat"><div class="no">2</div><div><h5>云商品库</h5><p>全面对接京东、当当、淘宝、天猫等主流电商平台，支持图书、文具、文创等全品类商品信息一键补全；集成AI智能识别技术，拍摄商品照片即可自动识别并完善商品资料，大幅提升录入效率。</p></div></div>
-          <div class="feat"><div class="no">3</div><div><h5>营销促销玩法</h5><p>智能促销矩阵＋会员成长体系深度融合，支持15＋促销玩法智能组合，结合会员消费画像实现千人千面营销，助力书店新客获取与业绩突破。</p></div></div>
-          <div class="feat"><div class="no">4</div><div><h5>春航AI大模型</h5><p>基于用户购买历史、浏览行为、会员资料，分析历史销售数据、预测畅销书籍和潜在需求，从智能分析、运营效率、客户体验、采购推荐、库存优化、增强营销到创新商业模式等多维度赋能，帮助零售书店转型为“智慧文化空间”。</p></div></div>
-          <div class="feat"><div class="no">5</div><div><h5>SaaS架构开放式接口</h5><p>提供标准化API接口，全面对接京东、顺丰、达达、UU等同城配送体系，并集成聚水潭、有赞、联营商家及电子发票等系统，一站式满足数字化运营需求。</p></div></div>
-        </div>
-      </div>
-      <div class="prod-media"><div class="duo">
-        <img src="assets/prod-main.jpg" alt="春航智慧云SaaS主系统界面" loading="lazy">
-        <img src="assets/prod-marketing.jpg" alt="营销终端与春航AI助手" loading="lazy">
-      </div></div>
-    </div>
-
-    <!-- 书店助手 -->
-    <div class="prod rev reveal">
-      <div class="prod-media"><img src="assets/prod-assistant.jpg" alt="春航智慧云书店助手手机端" loading="lazy"></div>
-      <div class="prod-body">
-        <h4>春航智慧云书店助手<span class="sec-tag">解决方案</span></h4>
-        <p class="lead">支持可视化数据报表、库存查询、缺货补货、手机端零售、商城订单处理、财务结算、库存盘点、商品批销、退货、上下架等常用核心功能，随时随地响应并处理书店问题，是众多书店移动式管理的得力助手。</p>
-        <div class="hl"><b>产品亮点</b><p>通过办公移动化能力，实现门店管理的自动化和智能化，让门店管理者能够随时随地掌控店铺运营状况，及时做出决策，提升门店运营效率。</p></div>
-      </div>
-    </div>
-
-    <!-- 图书商城小程序 -->
-    <div class="prod reveal">
-      <div class="prod-body">
-        <h4>春航图书商城小程序<span class="sec-tag">解决方案</span></h4>
-        <p class="lead">积聚线上零售、拼团秒杀、裂变分销、图书借阅、会员增值服务等多个互联网最热门的营销玩法，与线下实体书店无缝衔接、相互引流，实现书店商家流量与销量同步增长。</p>
-        <div class="hl"><b>产品亮点</b><p>比H5更稳定，比APP更简单，微信直接搜索授权登录即可使用，无需顾客下载任何应用；商城所有模块可任意组件式搭建，即看即所得，实现书店线上线下深度一体化。</p></div>
-      </div>
-      <div class="prod-media"><img src="assets/prod-mall.jpg" alt="春航图书商城小程序界面" loading="lazy"></div>
-    </div>
-
-    <!-- 收银系统 -->
-    <div class="prod rev reveal">
-      <div class="prod-media"><img src="assets/prod-pos.jpg" alt="春航智慧云收银系统" loading="lazy"></div>
-      <div class="prod-body">
-        <h4>春航智慧云收银系统<span class="sec-tag">解决方案</span></h4>
-        <p class="lead">收银速度达到毫秒级，同时支持支付宝、微信、现金、银行卡、礼品卡、积分兑换等多种聚合支付方式同时使用，与线上数据同步，支持会员管理、线上优惠券核销使用等强大功能。</p>
-        <div class="hl"><b>产品亮点</b><p>断网情况下支持离线收银，结算时可连续扫书码，顾客支付码一码多用，大大增加收银效率。界面简洁、操作简单易懂，员工使用方便快捷；零售日志可详细记录收银员每步操作，规避收银风险。</p></div>
-      </div>
-    </div>
-
-    <!-- 供应链 -->
-    <div class="prod reveal">
-      <div class="prod-body">
-        <h4>春航智慧云供应链<span class="sec-tag">解决方案</span></h4>
-        <p class="lead">专为图书、文具、文创行业量身打造，平台与各大头部品牌及源头工厂建立了深度合作，从源头严控品质，确保商品供应稳定，同时以集采优势实现价格最优。</p>
-        <div class="hl"><b>产品亮点</b><p>针对传统书店压货资金占用大、经营风险高等痛点，创新支持“零库存”模式——无需囤货，下单即可极速出库；同时提供全渠道一件代发服务，无论是商城小程序、主流电商平台还是本地生活平台，都能一键铺货、同步管理，真正打通公域与私域流量边界。</p></div>
-      </div>
-      <div class="prod-media"><img src="assets/prod-supply.jpg" alt="春航供应链平台界面" loading="lazy"></div>
-    </div>
-
-    <!-- 慧眼系统 -->
-    <div class="prod rev reveal">
-      <div class="prod-media"><img src="assets/prod-eye.jpg" alt="春航智慧云慧眼系统" loading="lazy"></div>
-      <div class="prod-body">
-        <h4>春航智慧云慧眼系统<span class="sec-tag">解决方案</span></h4>
-        <p class="lead">智能识别进店客户人群，随时随地掌握进店客流，客流趋势变化一目了然；分析消费者重点关注的区域，帮助书店快速调整店铺秩序；智能收银防损主动识别收银员操作，杜绝隐藏交易。</p>
-        <div class="hl"><b>产品亮点</b><p>集成AI数据处理，支持AI智能识别进店客户人群、AI杂物堆积检测（通道占用）等能力，数据直接连通书店助手、PC收银端；门店销售额与客流统计数据同步分析，清晰呈现店铺客流转化，指导书店优化调整经营方向。</p></div>
-      </div>
-    </div>
+    <div class="sec-head reveal"><span class="sec-no">03</span><h3>春航智慧云产品架构</h3></div>
+    <p class="sec-sub reveal">基于SaaS云架构平台，上层整合进销存、WMS、财务、营销、CRM等核心业务系统，下层依托开发框架、SaaS基础服务、数据库、中间件、大数据与管理监控等技术底座，构建覆盖图书商城、智慧云主系统、慧眼系统、AI助手、自助收银、团购小程序的全场景产品体系。</p>
+    <div class="arch-img reveal"><img src="assets/arch.jpg" alt="春航智慧云SaaS云架构平台产品架构图" loading="lazy"></div>
   </div>
 </section>
 
@@ -425,7 +467,7 @@
 <section id="compare">
   <div class="wrap">
     <div class="sec-head reveal"><span class="sec-no">VS</span><h3>与传统书店软件功能对比</h3></div>
-    <p class="sec-sub reveal">春航智慧云 SaaS 架构，对比传统 CS 架构书店软件的七大核心优势。</p>
+    <p class="sec-sub reveal">春航智慧云 SaaS 架构，对比传统 CS 架构书店软件的九大核心优势。</p>
 
     <div class="cmp reveal">
       <div class="cmp-head"><div class="good">春航智慧云</div><div class="bad">传统软件（传统CS架构）</div></div>
@@ -446,79 +488,169 @@
       </div>
 
       <div class="cmp-row">
+        <div class="cmp-cell good"><div class="t"><span class="ico ok">✓</span>多营销玩法</div><p>多功能会员卡体系、积分体系、优惠券智能推送，灵活设置线上线下通用优惠券等多种会员营销方式，锁定顾客长期回头消费，大大提升顾客转化效果。</p></div>
+        <div class="cmp-cell bad"><div class="t"><span class="ico no">✕</span>玩法单一</div><p>会员卡体系不完整，只能进行简单管理，积分一般只起到展示作用，且无法实现灵活的优惠券管理。</p></div>
+      </div>
+
+      <div class="cmp-row">
+        <div class="cmp-cell good"><div class="t"><span class="ico ok">✓</span>供应链平台</div><p>平台直连各大出版社，融合京东全品类供应链，一键采货铺货代发，零囤货减压资金库存，实现门店轻资产灵活运营。</p></div>
+        <div class="cmp-cell bad"><div class="t"><span class="ico no">✕</span>多供应商拿货</div><p>需单独联系各大供应商，库存压力大，资金占用多，拿货、囤货、管理库存成本高。</p></div>
+      </div>
+
+      <div class="cmp-row">
         <div class="cmp-cell good"><div class="t"><span class="ico ok">✓</span>数据安全性高</div><p>基于阿里云和华为云的安全防护认证，安全体系标准一致，提供离线操作与实时数据备份，商家无需担心数据丢失损坏。</p></div>
         <div class="cmp-cell bad"><div class="t"><span class="ico no">✕</span>数据易损坏</div><p>硬件损坏、网络中断、数据丢失、工作人员误操作等问题都会造成严重的安全问题。</p></div>
       </div>
 
       <div class="cmp-row">
-        <div class="cmp-cell good"><div class="t"><span class="ico ok">✓</span>全链路打通</div><p>零售、盘点、采购、配送、门店、分销、财务、会员、餐饮、营销、报表全部整合在一个主系统内。</p></div>
-        <div class="cmp-cell bad"><div class="t"><span class="ico no">✕</span>功能区分收费</div><p>仅提供基本业务模块，满足书店基础业务，不兼容餐饮、营销等业务类型。</p></div>
-      </div>
-
-      <div class="cmp-row">
-        <div class="cmp-cell good"><div class="t"><span class="ico ok">✓</span>多营销玩法</div><p>多功能会员卡体系、积分体系、优惠券智能推送，灵活设置线上线下通用优惠券等多种会员营销方式，锁定顾客长期回头消费，大大提升顾客转化效果。</p></div>
-        <div class="cmp-cell bad"><div class="t"><span class="ico no">✕</span>玩法单一</div><p>会员卡体系不完整，只能进行简单管理，积分一般只起到展示作用，且无法实现灵活的优惠券管理。</p></div>
+        <div class="cmp-cell good"><div class="t"><span class="ico ok">✓</span>本地生活全平台打通</div><p>打通京东、美团、饿了么、抖音团购等所有本地生活平台即时零售，订单、库存自动同步至系统，一个后台统一处理发货，无需多平台切换。</p></div>
+        <div class="cmp-cell bad"><div class="t"><span class="ico no">✕</span>多平台独立发货</div><p>需在京东、美团、饿了么、抖音等各平台后台来回切换接单发货，操作繁琐。</p></div>
       </div>
 
       <div class="cmp-row">
         <div class="cmp-cell good"><div class="t"><span class="ico ok">✓</span>报表齐全</div><p>报表系统强大，支持数据看板、销售排行、库存预警、销售分析、进货分析，数据分析图表展示形式更加直观。</p></div>
         <div class="cmp-cell bad"><div class="t"><span class="ico no">✕</span>报表数据单一</div><p>业绩需要财务手工加减，出错风险高；利润不够精细化，现金转换率无法得知；盘亏、盘盈、盘点数据不准，销售排行榜无从得知，次年销售方向和计划难以估算。</p></div>
       </div>
+
+      <div class="cmp-row">
+        <div class="cmp-cell good"><div class="t"><span class="ico ok">✓</span>全链路打通</div><p>零售、盘点、采购、配送、门店、分销、财务、会员、餐饮、营销、报表全部整合在一个主系统内。</p></div>
+        <div class="cmp-cell bad"><div class="t"><span class="ico no">✕</span>功能区分收费</div><p>仅提供基本业务模块，满足书店基础业务，不兼容餐饮、营销等业务类型。</p></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= 03 数据与服务 ================= -->
-<section id="data">
+<!-- ================= 04 产品矩阵 ================= -->
+<section id="products">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-no">03</span><h3 style="color:#fff">平台数据与售后优质服务</h3></div>
-    <p class="sec-sub reveal">每天有6000＋的主系统同时登录操作，8000＋的收银系统处于运行状态，2400＋的书店助手访问用户，300w＋的商城访问量。</p>
+    <div class="sec-head reveal"><span class="sec-no">04</span><h3>春航智慧云产品矩阵</h3></div>
+    <p class="sec-sub reveal">基于SaaS云架构的智慧书店管理系统，涵盖进销存、WMS仓储、库存、会员营销、餐饮、图书借阅、财务分析、报表统计、员工权限、线上商城等能力，满足书店管理、销售、分析等多方位要求。<span class="sec-tag">解决方案</span></p>
 
-    <div class="data-grid reveal">
-      <div class="dcard"><b>4318</b><span>商户数</span></div>
-      <div class="dcard"><b>6203</b><span>门店数</span></div>
-      <div class="dcard"><b>8187</b><span>收银端</span></div>
-      <div class="dcard"><b>2837</b><span>商城在线</span></div>
-    </div>
-
-    <div class="data-mid reveal">
-      <div class="chart-card">
-        <h5>站点新增数量（2022–2025）</h5>
-        <div class="bars">
-          <div class="bar"><b>≈480</b><i style="height:19%"></i><em>2022</em></div>
-          <div class="bar"><b>≈1000</b><i style="height:40%"></i><em>2023</em></div>
-          <div class="bar"><b>≈1980</b><i style="height:79%"></i><em>2024</em></div>
-          <div class="bar"><b>≈2300</b><i style="height:92%"></i><em>2025</em></div>
-        </div>
-        <div class="updown">
-          <div class="ud up"><b>↑ 30%</b><span>零售业绩提升</span></div>
-          <div class="ud down"><b>↓ 20%</b><span>人工成本下降</span></div>
+    <!-- SaaS 主系统 -->
+    <div class="prod reveal">
+      <div class="prod-body">
+        <h4>春航智慧云 SaaS 主系统<span class="sec-tag">解决方案</span></h4>
+        <p class="lead">系统基于SaaS云架构的智慧书店管理系统，涵盖了进销存、WMS仓储管理、库存管理、会员营销、餐饮管理、图书借阅管理、财务分析、报表统计、员工权限管理、线上商城管理等多个功能，满足书店管理、销售、分析等多方位要求。</p>
+        <div class="feat-list">
+          <div class="feat"><div class="no">1</div><div><h5>进销存管理一体化</h5><p>春航智慧云的进销存管理系统采用全链路集成模式，打造书店供应链、采购、会员、营销、商城、财务的运营闭环，解决图书行业的经营难点。仓配、直配、直送、越库等多种方式满足书店不同的配货配送需求。</p></div></div>
+          <div class="feat"><div class="no">2</div><div><h5>全品类云商品库</h5><p>春航云商品库已全面对接京东、当当、淘宝、天猫等主流电商平台，支持图书、文具、文创等全品类商品信息的一键补全。更创新性地集成AI智能识别技术，仅需拍摄商品照片即可自动识别并完善商品资料，大幅提升商品信息录入效率。</p></div></div>
+          <div class="feat"><div class="no">3</div><div><h5>营销促销玩法</h5><p>春航智慧云创新零售解决方案，通过智能促销矩阵＋会员成长体系的深度融合，系统支持16种以上促销玩法智能组合，结合会员消费画像实现千人千面营销，助力书店实现新客获取成本突破性增长。</p></div></div>
+          <div class="feat"><div class="no">4</div><div><h5>春航AI大模型</h5><p>春航AI大模型可以基于用户购买历史、浏览行为、会员资料（如年龄、兴趣标签），分析历史销售数据、预测畅销书籍和潜在需求，从智能分析、运营效率、客户体验、数据分析、采购推荐、库存优化、增强营销到创新商业模式等多维度赋能，帮助零售书店转型为“智慧文化空间”。</p></div></div>
+          <div class="feat"><div class="no">5</div><div><h5>SaaS架构开放式接口</h5><p>春航智慧云SaaS平台采用开放式架构，提供标准化API接口，全面对接京东、顺丰、达达、UU等同城配送体系，并集成聚水潭、有赞、联营商家及电子发票等系统，一站式满足书店行业的数字化运营需求。</p></div></div>
         </div>
       </div>
-      <div class="live-card">
-        <h5>每日平台运行实况</h5>
-        <ul class="live-list">
-          <li><b>6000+</b>主系统同时登录操作</li>
-          <li><b>8000+</b>收银系统处于运行状态</li>
-          <li><b>2400+</b>书店助手访问用户</li>
-          <li><b>300w+</b>商城访问量</li>
-        </ul>
+      <div class="prod-media"><div class="duo">
+        <img src="assets/prod-main-a.jpg" alt="春航智慧云SaaS主系统界面" loading="lazy">
+        <img src="assets/prod-main-b.jpg" alt="春航智慧云SaaS主系统数据看板" loading="lazy">
+      </div></div>
+    </div>
+
+    <!-- 书店助手 -->
+    <div class="prod rev reveal">
+      <div class="prod-media"><div class="trio">
+        <img src="assets/prod-assistant-1.jpg" alt="春航智慧云书店助手手机端" loading="lazy">
+        <img src="assets/prod-assistant-2.jpg" alt="春航智慧云书店助手报表" loading="lazy">
+        <img src="assets/prod-assistant-3.jpg" alt="春航智慧云书店助手库存管理" loading="lazy">
+      </div></div>
+      <div class="prod-body">
+        <h4>春航智慧云书店助手<span class="sec-tag">解决方案</span></h4>
+        <p class="lead">支持可视化数据报表、库存查询、缺货补货、手机端零售、商城订单处理、财务结算、库存盘点、商品批销、退货、上下架等常用核心功能，随时随地响应并处理书店问题，是众多的书店移动式管理的得力助手。</p>
+        <div class="hl"><b>产品亮点</b><p>依托移动化办公能力，实现书店门店管理的自动化、智能化升级。助力门店管理者随时随地掌握门店经营动态，快速响应场景、精准决策，全方位提升门店整体运营效率与管理效能。</p></div>
       </div>
     </div>
 
-    <div class="promise reveal">
-      <div class="pm c1"><h6>优质服务</h6><p>春航科技一直致力于书店的数字化建设，以10多年的行业经验为基础，普及书业的信息化转型，为书业客户群体提供高效、智慧的产品服务。</p></div>
-      <div class="pm c2"><h6>精湛技术</h6><p>积累1000＋成熟项目经验，精通JAVA、HTML5、MYSQL、SpringBoot等主流以及非主流的开发系统框架，以最科学的技术助力书业数字化转型。</p></div>
-      <div class="pm c3"><h6>专业研发</h6><p>春航研发团队人均从业8年以上，有专业及丰富的开发经验，产品深入业务、研发深入逻辑，从产品建立与迭代各个流程把控细节，利用丰富的行业通理及经验打造落地的产品。</p></div>
-      <div class="pm c4"><h6>最优价格</h6><p>智慧云SaaS系统基于订阅式、租赁式模式，从部署、价格上都具最大优势，减少书店经营成本。产品包含免费的售后以及升级迭代服务，获得了客户最大信任。</p></div>
+    <!-- 图书商城小程序 -->
+    <div class="prod reveal">
+      <div class="prod-body">
+        <h4>春航图书商城小程序<span class="sec-tag">解决方案</span></h4>
+        <p class="lead">春航图书商城小程序积聚线上零售、拼团秒杀、裂变分销、图书借阅、会员增值服务等多个互联网最热门的营销玩法，与线下实体书店无缝衔接，相互引流，实现书店商家流量与销量同步增长。</p>
+        <div class="hl"><b>产品亮点</b><p>比H5更稳定，比APP更简单，微信直接搜索授权登陆即可使用，无需顾客下载任何应用；商城所有模块可任意组件式搭建，即看即所得，实现书店线上线下深度一体化。</p></div>
+      </div>
+      <div class="prod-media"><div class="trio">
+        <img src="assets/prod-mall-1.jpg" alt="春航图书商城小程序首页" loading="lazy">
+        <img src="assets/prod-mall-2.jpg" alt="春航图书商城小程序商品页" loading="lazy">
+        <img src="assets/prod-mall-3.jpg" alt="春航图书商城小程序会员中心" loading="lazy">
+      </div></div>
+    </div>
+
+    <!-- 收银系统 -->
+    <div class="prod rev reveal">
+      <div class="prod-media"><img src="assets/prod-pos.jpg" alt="春航智慧云收银系统" loading="lazy"></div>
+      <div class="prod-body">
+        <h4>春航智慧云收银系统<span class="sec-tag">解决方案</span></h4>
+        <p class="lead">春航智慧收银系统收银速度达到毫秒级，同时支持支付宝、微信、现金、银行卡、礼品卡、积分兑换等多种聚合支付方式同时使用，与线上数据同步，支持会员管理、线上优惠券核销使用等强大功能。</p>
+        <div class="hl"><b>产品亮点</b><p>设备支持离线收银，断网亦可正常结算，搭配连续扫书、支付码通用功能，高效提升收银效率。系统界面简洁、操作便捷，员工可快速上手使用。同时依托精细化零售日志，完整记录收银全流程操作，实现操作可溯源，有效规避各类收银违规问题。</p></div>
+      </div>
+    </div>
+
+    <!-- 供应链 -->
+    <div class="prod reveal">
+      <div class="prod-body">
+        <h4>春航智慧云供应链<span class="sec-tag">解决方案</span></h4>
+        <p class="lead">春航供应链平台深耕图书、文具、文创领域，对接源头工厂与头部品牌，严控品质、货源稳定、价优集采。平台打通京东全品类供应链接口，全域正品、履约高效，可满足各类客户一站式全品类采购需求。</p>
+        <div class="hl"><b>产品亮点</b><p>针对传统书店囤货压资、库存积压等痛点，春航供应链平台依托合作的图书、文具文创货源及打通的京东全品类供应链，推出书店专属零库存方案：无需提前备货，订单直发、一件代发，支持一键铺货、统一管理多渠道订单，削减门店资金压力与经营风险，助力实体书店轻资产运营拓客。</p></div>
+        <div class="pt-group">
+          <h5>供应链合作商家</h5>
+          <div class="pt-cards mini">
+            <div class="pt"><b>博库网络有限公司</b></div>
+            <div class="pt"><b>四川文轩在线电子商务有限公司</b></div>
+            <div class="pt"><b>重庆大学出版社</b></div>
+            <div class="pt"><b>荣信教育文化产业发展股份有限公司</b></div>
+            <div class="pt"><b>后浪出版咨询（北京）有限责任公司</b></div>
+            <div class="pt"><b>读客文化股份有限公司</b></div>
+            <div class="pt"><b>果麦文化传媒股份有限公司</b></div>
+            <div class="pt"><b>浙江少年儿童出版社</b></div>
+            <div class="pt"><b>华中科技大学出版社有限责任公司</b></div>
+            <div class="pt"><b>江西斗半匠文化产业发展有限公司</b></div>
+            <div class="pt"><b>山东一本图书有限公司</b></div>
+            <div class="pt"><b>北京桃李风华图书有限公司</b></div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-media"><img src="assets/prod-supply.jpg" alt="春航供应链平台界面" loading="lazy"></div>
+    </div>
+
+    <!-- 慧眼系统 -->
+    <div class="prod rev reveal">
+      <div class="prod-media"><div class="ai-cards">
+        <figure><video src="assets/eye-1.mp4" controls muted preload="none" playsinline></video><figcaption>进店客流识别 · 商场店外客流实况</figcaption></figure>
+        <figure><video src="assets/eye-2.mp4" controls muted preload="none" playsinline></video><figcaption>AI 智能检测演示</figcaption></figure>
+      </div></div>
+      <div class="prod-body">
+        <h4>春航智慧云慧眼系统<span class="sec-tag">解决方案</span></h4>
+        <p class="lead">智能识别进店客户人群，随时随地掌握进店客流，客流趋势变化一目了然；分析消费者重点关注的区域，帮助书店快速调整店铺秩序；智能收银防损主动识别收银员操作，杜绝隐藏交易。</p>
+        <div class="hl"><b>产品亮点</b><p>集成AI数据处理，数据直接连通书店助手、PC收银端。门店销售额与客流统计数据同步分析，清晰呈现店铺客流转化，指导书店优化调整经营方向。</p></div>
+        <div class="ai-cards" style="margin-top:16px;">
+          <div class="ai-card"><div class="ico-ai">AI</div><div><b>AI智能识别进店客户人群</b><p>智能识别进店客户人群，随时随地掌握进店客流，客流趋势变化一目了然。</p></div></div>
+          <div class="ai-card"><div class="ico-ai">AI</div><div><b>AI杂物堆积检测（通道占用）</b><p>分析消费者重点关注的区域，帮助书店快速调整店铺秩序，保障店内通道畅通。</p></div></div>
+          <div class="ai-card"><div class="ico-ai">AI</div><div><b>智能收银防损</b><p>主动识别收银员操作，杜绝隐藏交易，数据直接连通书店助手、PC收银端。</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 硬件设备 -->
+    <div class="reveal" style="padding-top:52px;border-top:1px dashed var(--line);">
+      <h4 style="font-size:24px;font-weight:900;display:flex;align-items:center;flex-wrap:wrap;margin-bottom:18px;">春航智慧云硬件设备<span class="sec-tag">解决方案</span></h4>
+      <p style="color:var(--muted);font-size:14.5px;max-width:820px;margin-bottom:26px;text-align:justify;">从收银机、自助终端到云打印机与AI摄像机，春航为书店提供一整套即插即用、与智慧云系统深度打通的智能硬件设备。</p>
+      <div class="hw-grid">
+        <div class="hw"><div class="pic"><img src="assets/hw-1.png" alt="商米FLEX 3标配" loading="lazy"></div><b>商米FLEX 3标配</b><span>特性：22英寸8核最高2.4GHZ、4GB+64GB、Wi-Fi、NFC、中规适配器、三合一</span></div>
+        <div class="hw"><div class="pic"><img src="assets/hw-2.png" alt="商米D3pro收银机" loading="lazy"></div><b>商米D3pro收银机</b><span>特性：商米 OS（基于Android 13深度定制）</span></div>
+        <div class="hw"><div class="pic"><img src="assets/hw-3.png" alt="商米T3收银机" loading="lazy"></div><b>商米T3收银机</b><span>特性：处理器8核，最高至2.4GHz（小票打印、扫码平台）、带副屏</span></div>
+        <div class="hw"><div class="pic"><img src="assets/hw-4.png" alt="川田T15 PLUS" loading="lazy"></div><b>川田 T15 PLUS</b><span>特性：双屏，四核处理器 内存4GB DDR3L，热敏打印机，硬盘128GB SSD，钱箱键盘套件</span></div>
+        <div class="hw"><div class="pic"><img src="assets/hw-5.png" alt="商米V2S" loading="lazy"></div><b>商米V2S</b><span>特性：显示屏5.5''HD+1400*720电容多点式触摸，打印头，扫码器</span></div>
+        <div class="hw"><div class="pic"><img src="assets/hw-6.png" alt="商米L2s PRO" loading="lazy"></div><b>商米L2s PRO</b><span>特性：稳定可靠，快速扫描，高灵敏度电容式触屏</span></div>
+        <div class="hw"><div class="pic"><img src="assets/hw-7.png" alt="芯烨XP-C58H云打印机" loading="lazy"></div><b>芯烨XP-C58H云打印机（58mm）</b><span>特性：XP-C58H USB/WIFI版、自动切纸（58mm）</span></div>
+        <div class="hw"><div class="pic"><img src="assets/hw-8.png" alt="智能看店摄像机" loading="lazy"></div><b>智能看店摄像机</b><span>特性：360°全景拍摄、智能收银防损，智能识别收银“飞单”行为、记录真实交易</span></div>
+        <div class="hw"><div class="pic"><img src="assets/hw-9.png" alt="AI识客摄像机" loading="lazy"></div><b>AI识客摄像机</b><span>特性：判断客流趋势，根据时段客流趋势洞察进店会员，清晰呈现店铺客流量转化</span></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= 04 合作伙伴 ================= -->
+<!-- ================= 05 合作伙伴 ================= -->
 <section id="partners">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-no">04</span><h3>春航智慧云战略合作伙伴</h3></div>
+    <div class="sec-head reveal"><span class="sec-no">05</span><h3>春航智慧云战略合作伙伴</h3></div>
     <p class="sec-sub reveal">与云服务商、平台、硬件、技术及供应链伙伴深度战略合作，共建书业智慧生态。</p>
 
     <div class="pt-group reveal">
@@ -562,19 +694,69 @@
   </div>
 </section>
 
-<!-- ================= 05 客户案例 ================= -->
+<!-- ================= 06 数据与服务 ================= -->
+<section id="data">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-no">06</span><h3>数据与服务</h3></div>
+    <p class="sec-sub reveal">春航售后优质服务，为书店的数字化之路全程保驾护航。<span class="sec-tag">解决方案</span></p>
+
+    <div class="data-grid reveal">
+      <div class="dcard"><b>4318</b><span>商户数</span></div>
+      <div class="dcard"><b>6203</b><span>门店数</span></div>
+      <div class="dcard"><b>8187</b><span>收银端</span></div>
+      <div class="dcard"><b>2837</b><span>商城在线</span></div>
+    </div>
+
+    <div class="data-mid">
+      <div class="chart-card reveal">
+        <h5>站点新增趋势</h5>
+        <div class="bars">
+          <div class="bar"><b>500</b><i style="height:35px"></i><em>2022</em></div>
+          <div class="bar"><b>1000</b><i style="height:66px"></i><em>2023</em></div>
+          <div class="bar"><b>2000</b><i style="height:118px"></i><em>2024</em></div>
+          <div class="bar"><b>2300</b><i style="height:142px"></i><em>2025</em></div>
+        </div>
+        <div class="updown">
+          <div class="ud up"><b>↑ 30%</b><span>零售业绩提升</span></div>
+          <div class="ud down"><b>↓ 20%</b><span>人工成本降低</span></div>
+        </div>
+      </div>
+      <div class="live-card reveal">
+        <h5>每天有</h5>
+        <ul class="live-list">
+          <li><b>6000+</b>主系统同时登录操作</li>
+          <li><b>8000+</b>收银系统处于运行状态</li>
+          <li><b>2400+</b>书店助手访问用户</li>
+          <li><b>300w+</b>商城访问量</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="promise reveal">
+      <div class="pm c1"><h6>优质服务</h6><p>深耕书业数字化十余年，春航科技专注助力全行业书店信息化转型升级，为广大书业客户提供高效、一体化智慧数字化解决方案与专属配套服务。</p></div>
+      <div class="pm c2"><h6>精湛技术</h6><p>沉淀 5000+ 落地成熟项目实战经验，精通JAVA、HTML5、MYSQL、SpringBoot等主流开发技术与各类框架，依托成熟、标准化技术体系，全方位赋能书店数字化升级。</p></div>
+      <div class="pm c3"><h6>专业研发</h6><p>自有资深研发团队，成员平均从业8年以上，深耕图书行业业务逻辑；全程把控产品搭建、迭代全流程，依托深厚行业沉淀，打造贴合书店经营场景、可快速落地的数字化产品。</p></div>
+      <div class="pm c4"><h6>最优价格</h6><p>自研智慧云 SaaS 系统采用订阅、租赁轻量化部署模式，大幅降低书店运营成本；配套免费售后、系统迭代升级服务，高性价比方案收获行业客户广泛认可与信赖。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= 07 客户案例 ================= -->
 <section id="cases">
   <div class="wrap">
-    <div class="sec-head reveal"><span class="sec-no">05</span><h3>春航智慧云全国案例客户 &amp; 风采展示</h3></div>
-    <p class="sec-sub reveal">从新华书店到民营连锁、从城市书房到24小时书屋，春航智慧云服务于遍布全国的书店客户。</p>
+    <div class="sec-head reveal"><span class="sec-no">07</span><h3>春航智慧云客户案例</h3></div>
+    <p class="sec-sub reveal">从国有新华书店到民营连锁书店，从24小时城市书屋到精品文化空间，春航智慧云已在全国各地书店落地生根。<span class="sec-tag">客户案例</span></p>
 
     <div class="case-grid">
       <div class="case reveal">
         <img src="assets/case-22.jpg" alt="沈阳市新华书店" loading="lazy">
         <div class="case-body">
           <h5>沈阳市新华书店</h5>
-          <p>沈阳新华书店是沈阳市图书发行领域的国有文化企业，其核心门店马路湾店始建于1945年东北书店时期，1948年沈阳解放后正式开业并成为东北地区首家新华书店。该书店历经多次业态革新，2015年转型为东北首家24小时“零点书店”。书店前身为1945年东北日报社所属的东北书店马路湾门市部，1948年11月8日正式挂牌营业，1949年更名为新华书店马路湾书店；2018年开设浑南分店填补区域文化空间空白，2025年新增亚泰城数字阅读书店，配备云屏数字借阅机实现电子资源免费下载，已形成包含马路湾店、浑南店等在内的多业态文化服务网络。</p>
-          <div class="case-app">主要应用：春航智慧云主系统、春航图书商城小程序</div>
+          <p><b>书店背景：</b>沈阳国有核心文化企业，拥有70多年历史，布局多业态门店，含东北首家24小时零点书店、数字阅读书店，覆盖图书零售+文化服务全场景。</p>
+          <p><b>核心痛点：</b>多门店数据不通，线上线下销售割裂；客流统计模糊，无法精准调整经营策略；传统收银效率低，无法适配24小时营业需求。</p>
+          <p><b>解决方案：</b>部署智慧云主系统打通全门店数据，搭配图书商城小程序实现线上线下一体化；用自助收银系统实现24小时营业需求，减少人力成本投入；打通京东供应链，实现全多品类创新，拓展了产品矩阵。</p>
+          <p><b>落地成果：</b>多门店数据实时同步，线上销售占比提升 30%；客流转化清晰可查，门店经营调整效率提升 50%；收银效率翻倍，适配 24 小时无间断营业。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城、春航自助收银系统、春航供应链</div>
         </div>
       </div>
 
@@ -582,8 +764,11 @@
         <img src="assets/case-23.jpg" alt="新华樾文书店" loading="lazy">
         <div class="case-body">
           <h5>新华樾文书店</h5>
-          <p>新华樾文书店隶属于重庆新华书店有限公司旗下，成功实现了“卖场书店”到“城市书店”的转型，从之前品类全而不精的卖场型书店转为以产品特色取胜、同时成为都市社区居民提供更好的文化与生活服务的城市型书店。为了迎合信息化时代的到来，新华樾文书店通过拓展互联网＋实体书店的方式，在销售模式上完成了升级，将实体书店与线上图书商城小程序无缝对接，让顾客在购物方式上有更多选择；同时加强线上营销，定期通过图书商城小程序和私域社群向读者推荐好书，吸引顾客消费，利用线上线下的双优势，扩大了书店品牌文化的宣传力度。</p>
-          <div class="case-app">主要应用：春航智慧云主系统、会员营销小程序</div>
+          <p><b>书店背景：</b>重庆新华旗下核心门店，从传统“卖场书店”转型精品“城市书店”，聚焦都市社区文化服务，主打特色品类运营，重视私域社群与品牌文化宣传。</p>
+          <p><b>核心痛点：</b>品类繁杂无特色，客户精准触达难度大；线上线下流量割裂，私域流量无法有效转化；会员体系不完善，无精细化运营手段锁定客户复购。</p>
+          <p><b>解决方案：</b>部署智慧云主系统实现品类精细化管理，搭建会员营销小程序打造私域运营体系，打通线上线下优惠券通用、积分互通功能，实现精准营销触达。</p>
+          <p><b>落地成果：</b>品类优化后门店客单价提升 25%；私域引流带动线下到店率提升 40%；会员精细化运营让复购率提升 35%，客户粘性显著增强。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城</div>
         </div>
       </div>
 
@@ -591,17 +776,23 @@
         <img src="assets/case-24.jpg" alt="宁夏固原新华书店" loading="lazy">
         <div class="case-body">
           <h5>宁夏固原新华书店</h5>
-          <p>固原新华书店是宁夏固原市的主要图书销售与文化服务机构，提供图书零售、阅读空间及文化活动，核心门店包括固原店（中心路112号）、荣盛路店（西苑路9号）和解放路店（解放路13号）。提供图书借阅、自习室、手工体验课及红色文化沙龙，打造“图书＋”复合空间；定期举办读书分享会（如世界读书日主题活动）、作家签售会（如“西海固文学”作品推广）；联合图书馆开展“行走的图书”等公益活动，推动全民阅读。</p>
-          <div class="case-app">主要应用：春航智慧云主系统、春航图书商城小程序</div>
+          <p><b>书店背景：</b>固原市核心图书文化服务机构，打造“图书+”复合经营空间，涵盖零售、借阅、自习室、文化沙龙，常年开展全民阅读公益活动，客群覆盖全年龄段。</p>
+          <p><b>核心痛点：</b>借阅与零售数据分离，人工管理繁琐且效率低；公益活动与商业运营联动弱，线下流量无法实现变现；无本地线上销售渠道，线下客流覆盖范围有限。</p>
+          <p><b>解决方案：</b>通过智慧云主系统整合“借阅+零售”全数据，实现业务一体化管理；上线图书商城小程序开通本地配送，实现活动线上宣传、线下到店的双向引流。</p>
+          <p><b>落地成果：</b>借阅零售一体化管理让人工成本降低 20%；活动线上引流带动参与人数翻倍，周边文创产品销售提升 30%；本地线上渠道实现门店辐射范围扩大 50%。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城</div>
         </div>
       </div>
 
       <div class="case reveal">
-        <img src="assets/case-25.jpg" alt="宁夏吴忠新华书店" loading="lazy">
+        <img src="assets/case-25.jpg" alt="宁夏吴忠新华" loading="lazy">
         <div class="case-body">
-          <h5>宁夏吴忠新华书店</h5>
-          <p>宁夏吴忠新华书店经过详细市场调研后，制定了改革创新、融合发展的战略。对有40年历史的吴忠新华书店中心店进行升级改造，打破门店长久以来传统的经营模式，打造了一个新型文化商业综合体。转型升级后的吴忠新华书店中心店被誉为“城市阅读书房”，多家媒体纷纷报道，增强了社会影响力，成为宁夏吴忠地区文化供给服务新的驿站。结合书店固定客群和目标客群，在学校附近开设教辅专营店，利用节假日开展营销活动，更好地为广大师生提供便利服务。</p>
-          <div class="case-app">主要应用：春航智慧云、无人自助收银系统</div>
+          <h5>宁夏吴忠新华</h5>
+          <p><b>书店背景：</b>门店拥有 40 年历史，改造升级为新型文化综合体，号称“城市阅读书房”；另在校旁开设教辅专营店，节假日开展营销服务，覆盖市民与师生。</p>
+          <p><b>核心痛点：</b>传统人工管理模式效率低下；总店与教辅分店数据割裂；缺少自助收银设备，高峰期结算拥堵；无数字化平台统一运营营销活动。</p>
+          <p><b>解决方案：</b>上线春航智慧云，实现多门店进销存、客群数据一体化管理；部署无人自助收银系统，优化线下购书结算；依托云平台统筹教辅、节日营销活动。</p>
+          <p><b>落地成果：</b>数字化统一管控减少人工管理成本；自助收银提升到店消费体验；精准营销带动教辅与图书销量增长；门店升级成为本地标杆文化驿站，品牌影响力提升。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航自助收银系统</div>
         </div>
       </div>
 
@@ -609,17 +800,23 @@
         <img src="assets/case-26.jpg" alt="云南璞玉书店" loading="lazy">
         <div class="case-body">
           <h5>云南璞玉书店</h5>
-          <p>正如其名，璞玉书店并没有诸如咖啡厅之类复杂累赘的功能，仅仅分为书籍摆放区和阅读区，它真正做到专注于阅读。每次来到这家店，台阶上都坐满了人。如果只是想单纯地阅读，来璞玉书店一定没错——暖光的灯光、通透的空间、安静的氛围，是大家对璞玉书店最直观的印象。学习桌、公共座位、独立阅读室，都是璞玉固有的陈设，璞玉为读者提供了最大程度的便利。</p>
-          <div class="case-app">主要应用：书店管理系统、会员营销系统、门店收银系统</div>
+          <p><b>书店背景：</b>主打纯阅读体验的特色精品书店，仅设书籍摆放区与阅读区，无多余复合业态，以优质阅读环境、安静氛围吸引核心阅读客群，注重线下体验感打造。</p>
+          <p><b>核心痛点：</b>纯线下经营模式，获客渠道单一且流量增长缓慢；会员仅做基础登记，无精细化运营，客户粘性低；传统库存盘点方式繁琐，耗费大量人工与时间。</p>
+          <p><b>解决方案：</b>上线门店管理系统实现库存智能盘点、数据实时更新；通过会员营销系统做核心客群精细化维护，搭配便捷收银系统提升线下结账效率，优化到店体验。</p>
+          <p><b>落地成果：</b>库存盘点时间缩短 70%，门店人工成本降低 15%；会员精细化运营让复购率提升 40%；线下客户体验优化带动门店客流稳步增长 20%。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城</div>
         </div>
       </div>
 
       <div class="case reveal">
-        <img src="assets/case-27.jpg" alt="重庆新山书店" loading="lazy">
+        <img src="assets/case-27.jpg" alt="新山书店" loading="lazy">
         <div class="case-body">
-          <h5>重庆新山书店</h5>
-          <p>重庆新山书屋位于重庆市渝北区嘉州路99号，营业时间中午12点到晚上12点，是一间反传统的新式书屋。书屋理念是营造一个城市孤独人群的天堂：除了卖书，新山书屋也卖精酿啤酒、咖啡简餐。书屋的环境很美，员工们把这里称为“花果山”，花艺师每周都会对店里的植物进行季节性更换——比如在秋天的时候，果类植物便占据了主导，到冬天又换成应景的绿植。书屋里面有一家新山咖啡，分为内外、上下二层，咖啡厅内光线昏暗，更接近酒吧的氛围；二楼的空间曾做过爵士乐品鉴、读书会、电影首映礼等活动，丰富了整个书屋的内涵。</p>
-          <div class="case-app">主要应用：春航智慧云、会员营销系统、有赞餐饮</div>
+          <h5>新山书店</h5>
+          <p><b>书店背景：</b>反传统新式复合书屋，主打“图书 + 精酿啤酒 + 咖啡简餐”业态，聚焦城市年轻客群，门店定期举办爵士乐品鉴、读书会等文化活动，注重场景化体验打造。</p>
+          <p><b>核心痛点：</b>图书与餐饮业务数据分离，无法实现统一核算与管理；文化活动与产品销售联动弱，未实现流量有效变现；无专属线上渠道，仅靠线下获客，客群触达范围窄。</p>
+          <p><b>解决方案：</b>智慧云主系统整合图书 + 餐饮全数据，实现业财税一体化管理；搭配有赞餐饮系统做餐饮精细化运营，通过会员营销系统联动活动宣传实现流量转化。</p>
+          <p><b>落地成果：</b>业财一体化核算让财务工作效率提升 50%；活动联动销售带动周边产品销售提升 35%；精准触达年轻客群，让门店年轻客群占比提升至 80%。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城、有赞餐饮系统</div>
         </div>
       </div>
 
@@ -627,8 +824,11 @@
         <img src="assets/case-28.jpg" alt="辽宁缘园书店" loading="lazy">
         <div class="case-body">
           <h5>辽宁缘园书店</h5>
-          <p>从传统书店到多元化文化综合体，从单一图书销售，到“阅读＋教育＋生活”复合型服务，缘园已发展成为拥有14家实体连锁书店、1家教育综合体的文化企业，并受托运营沈阳莫子山城市书房、铁岭银州区城市中心书房等10家城市书房，员工规模达208人，成为辽宁省最大的民营连锁书店。</p>
-          <div class="case-app">主要应用：春航智慧云、会员营销系统、春航图书商城系统</div>
+          <p><b>书店背景：</b>辽宁省最大民营连锁书店，布局 14 家实体门店和一家教育综合体，受托运营10余家城市书房，员工规模200余人，属于多场景、多门店跨区域经营模式。</p>
+          <p><b>核心痛点：</b>多门店、城市书房管理分散，总部无法统一管控与数据同步；会员跨店通用难，客户粘性低；营销玩法单一，无法适配不同门店、不同客群的运营需求。</p>
+          <p><b>解决方案：</b>部署智慧云主系统实现多门店、多场景统一管控与数据实时同步；图书商城系统打通跨店会员数据，实现会员权益全域通用；依托 15+ 营销玩法实现千人千面精准运营。</p>
+          <p><b>落地成果：</b>总部统一管控让门店整体管理效率提升 60%；会员跨店通用后复购率提升 40%；营销玩法升级带动门店整体销售额提升 30%，各门店运营适配性显著增强。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城</div>
         </div>
       </div>
 
@@ -636,8 +836,11 @@
         <img src="assets/case-29.jpg" alt="广西韬智书店" loading="lazy">
         <div class="case-body">
           <h5>广西韬智书店</h5>
-          <p>广西韬智图书有限公司成立于1993年10月10日，公司位于广西南宁仙葫开发区通福路177号。公司在全区县级以上城市拥有超过200家合作经销商，并在市县开办了17家直营连锁店，形成了具有相当规模的销售网络，并开办了天猫商城“韬智图书专营店”。</p>
-          <div class="case-app">主要应用：春航智慧云、会员营销系统、春航图书商城系统</div>
+          <p><b>书店背景：</b>广西老牌图书企业，拥有 17 家直营连锁店，200+ 合作经销商，线上布局天猫“韬智图书专营店”，形成“线下直营 + 经销商批销 + 线上电商”全渠道经营模式。</p>
+          <p><b>核心痛点：</b>线上天猫店与线下门店数据不通，库存、销售数据无法实时同步；经销商批销流程繁琐，人工沟通成本高、效率低；库存数据不准，易出现断货、积压双重问题。</p>
+          <p><b>解决方案：</b>智慧云主系统打通线上线下全渠道数据，实现库存、销售实时同步；图书商城系统优化经销商批销流程，实现线上订货、智能结算；智能库存功能实现库存实时预警与优化。</p>
+          <p><b>落地成果：</b>线上线下数据同步让库存准确率提升 95%，断货、积压问题大幅减少；经销商批销效率提升 70%，人工沟通成本降低 40%；全渠道发货效率整体提升 50%。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城</div>
         </div>
       </div>
 
@@ -645,8 +848,11 @@
         <img src="assets/case-30.jpg" alt="广东联合图书有限公司" loading="lazy">
         <div class="case-body">
           <h5>广东联合图书有限公司</h5>
-          <p>广东联合书店是香港联合出版集团（香港最大的综合性出版集团之一）在内地全资投资的第一家书店，也是该集团全球七十多家书店中的最新成员。联合书店位于广州繁华的北京路步行街，是一间楼高六层的综合性书店，秉承集团的宗旨，致力为读者搜集世界各地的优质读物和文化产品，并提供文化气氛浓厚的阅读环境和高水准的服务。经营面积有一千五百平方米，图书种类多达四万多种。</p>
-          <div class="case-app">主要应用：春航智慧云、春航餐饮系统</div>
+          <p><b>书店背景：</b>香港联合出版集团内地全资首家书店，位于广州北京路核心商圈，六层综合性经营空间，经营 4 万+ 图书品类，主打全球优质读物与高水准文化服务，定位中高端客群。</p>
+          <p><b>核心痛点：</b>图书零售与餐饮配套数据分离，业财核算流程繁琐；高端客群需求个性化，无专属会员精细化运营体系；门店日常客流大，对收银效率要求高。</p>
+          <p><b>解决方案：</b>智慧云主系统整合图书 + 餐饮业务数据，实现业财税一体化高效管理；搭建高端会员专属运营体系，实现精准服务与专属权益匹配；部署高效收银系统适配大客流运营场景。</p>
+          <p><b>落地成果：</b>业财税一体化管理让财务核算效率提升 60%；高端会员精细化运营让客单价提升 50%；高效收银系统适配大客流，结账效率提升 70%，客户体验优化。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航餐饮系统</div>
         </div>
       </div>
 
@@ -654,8 +860,11 @@
         <img src="assets/case-31.jpg" alt="白银吾言文化图书有限公司" loading="lazy">
         <div class="case-body">
           <h5>白银吾言文化图书有限公司</h5>
-          <p>吾言书店首家“24小时城市书屋”，以舒适的环境、齐全的设备和“不打烊”的全天开放时间，吸引许多市民前来读书、学习。进入书店，被浓浓的书香气息所感染——读者们有的捧着书静静阅读、有的紧锁眉头沉心思考、有的奋笔疾书做着记录……在喧嚣嘈杂的城市中，这里不仅是爱书人的阅读乐园，也为一座城市“点燃了一盏不熄的灯”。吾言书店现有图书22万册，年服务读者超6万人次，年开放时间达4368小时，读者无需出示任何证件便可有序进入免费阅读；每天晚上9点至次日早9点为夜读时间，书店阅读区、水吧区、社科区等全面开放，还经常性开展内容丰富、形式多样的全民阅读活动，为推动全民阅读、打造书香白银添砖加瓦。</p>
-          <div class="case-app">主要应用：春航智慧云、春航智慧图书商城</div>
+          <p><b>书店背景：</b>白银首家“24 小时城市书屋”，拥有 22 万册藏书，年服务读者超 6 万人次，主打免费阅读、夜读服务，配套水吧、自习区，是当地核心全民阅读阵地。</p>
+          <p><b>核心痛点：</b>24 小时营业导致传统收银模式无法适配，人工成本居高不下；借阅与零售数据分离，门店整体管理难度大；无线上渠道，无法实现线下流量线上转化。</p>
+          <p><b>解决方案：</b>部署智慧云主系统整合借阅 + 零售数据，实现业务一体化管理；上线智慧图书商城小程序，打通线上线下消费链路；搭建适配 24 小时营业的智能收银体系，降低人工依赖。</p>
+          <p><b>落地成果：</b>智能收银体系让门店人工成本降低 40%，适配 24 小时无人值守场景；借阅零售一体化管理让运营效率提升 35%；线上渠道实现线下流量转化，销售额提升 25%。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城</div>
         </div>
       </div>
 
@@ -663,8 +872,11 @@
         <img src="assets/case-32.jpg" alt="成都韬奋三联书店" loading="lazy">
         <div class="case-body">
           <h5>成都韬奋三联书店</h5>
-          <p>生活·读书·新知三联书店是一家具有悠久历史和光荣传统的出版机构。建店八十余年来，始终秉承“竭诚为读者服务”的宗旨，恪守“人文精神，思想智慧”的理念，坚持“一流、新锐”的标准，以出版人文科学和社会科学图书为主，出版物涉及哲学、历史、文学、艺术、经济、政治、法律和社会生活等领域，在知识界和广大读者中享有盛誉，被誉为“中国知识分子的精神家园”。</p>
-          <div class="case-app">主要应用：春航智慧云、会员营销系统</div>
+          <p><b>书店背景：</b>三联书店旗下核心门店，主打人文社科类图书，是国内知名的“知识分子的精神家园”，注重优质内容传播与文化活动运营，客群以高知、文艺群体为主。</p>
+          <p><b>核心痛点：</b>会员仅做基础管理，无针对高知客群的精细化运营体系；文化活动与图书销售联动弱，未形成消费闭环；门店数据统计单一，无法为运营决策提供有效支撑。</p>
+          <p><b>解决方案：</b>智慧云主系统实现多维度数据统计与分析，为门店运营决策提供数据支撑；会员营销系统搭建高知客群专属运营体系，实现精准内容与服务触达；打造活动与图书销售联动营销模式，形成消费闭环。</p>
+          <p><b>落地成果：</b>数据化运营让决策效率提升 50%，运营方向更精准；高知客群精细化运营让复购率提升 45%；活动与销售联动让文化活动转化率提升 30%，实现流量变现。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城</div>
         </div>
       </div>
 
@@ -672,28 +884,43 @@
         <img src="assets/case-33.jpg" alt="宁德市学友图书有限公司" loading="lazy">
         <div class="case-body">
           <h5>宁德市学友图书有限公司</h5>
-          <p>宁德学友书店，以其丰富的书籍种类和舒适的阅读环境，成为了市民心中的理想阅读场所。书店不仅提供古今中外名著、儿童读物、文学类、科普书、工具书等各类图书，还设有咖啡厅，提供咖啡、茶等饮品，让读者在享受阅读的同时，也能享受到轻松的休闲时光。学友书店注重为读者创造一个宁静的阅读空间，其现代简约的装修风格和干净整洁的环境，使得这里成为市民放松心情、充实自我的首选之地。此外，学友书店还积极举办各种文化活动，致力于推动宁德市的文化发展，成为连接读者与知识之间的桥梁。</p>
-          <div class="case-app">主要应用：春航智慧云、春航智慧图书商城</div>
+          <p><b>书店背景：</b>宁德市核心综合型书店，品类涵盖中外名著、儿童读物、科普、工具书等全品类，配套自习室打造“阅读 + 休闲”复合场景，客群覆盖家庭、学生、老师及普通市民，布局异业联盟储值消费多元业务场景。</p>
+          <p><b>核心痛点：</b>图书零售与异业联盟消费数据不通联，无专业团购功能，各业务无法统一管理与核算；会员体系搭建简单，缺乏积分、优惠券等高效运营手段，客群粘性弱。</p>
+          <p><b>解决方案：</b>部署智慧云主系统，整合图书零售与异业联盟全维度数据，实现多业务一体化管理与核算；搭建标准化完整会员体系，打通积分、优惠券线上线下通用链路；依托图书商城小程序，实现活动线上精准宣传、引流及团购功能落地。</p>
+          <p><b>落地成果：</b>多业务一体化管理让门店整体运营效率提升 30%，核算精准度大幅提高；会员体系升级后客群复购率提升 25%，粘性显著增强；线上宣传引流带动活动参与人数提升 60%，门店人气与销售额实现同步增长。</p>
+          <div class="case-app">应用产品：春航智慧云主系统、春航图书商城、春航异业联营核销系统、春航团购商城</div>
         </div>
       </div>
+    </div>
+
+    <div class="logo-wall reveal">
+      <h5>部分合作客户</h5>
+      <div class="wall-img"><img src="assets/logos.jpg" alt="春航智慧云合作客户" loading="lazy" style="width:100%;display:block;"></div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div><b>重庆春航科技有限公司</b><br><span>CHUNHANG TECHNOLOGY · 书店数字化门店整体方案提供商</span></div>
+    <b>重庆春航科技有限公司</b>
     <span>实体书店新零售解决方案 · 春航助力实体书店数字化转型</span>
   </div>
 </footer>
 
 <script>
-  if (new URLSearchParams(location.search).has('static')) {
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('on'));
-  } else {
-    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} }), {threshold:.12});
-    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){
+    for(var i=0;i<els.length;i++) els[i].classList.add('on');
+    return;
   }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); }
+    });
+  },{threshold:.1});
+  els.forEach(function(el){ io.observe(el); });
+})();
 </script>
 </body>
 </html>
